@@ -1,18 +1,14 @@
-import { Client } from "@notionhq/client";
-import dotenv from "dotenv";
-
-dotenv.config();
+import { ConvertorService } from "./convertor.service";
+import { NotionService } from "./notion/notion.service";
 
 async function main() {
-  const notion = new Client({
-    auth: process.env.NOTION_TOKEN,
-  });
+  const notionService = new NotionService();
+  const convertorService = new ConvertorService();
 
-  const response = await notion.databases.query({
-    database_id: "FIXME",
-  });
+  const apiMethodList = await notionService.extracFromNotion();
 
-  console.log("Got response:", response);
+  const markdownTable = convertorService.convertToMarkdown(apiMethodList);
+  console.log(markdownTable);
 }
 
 main()
