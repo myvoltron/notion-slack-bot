@@ -12,7 +12,7 @@ export class ConvertorService {
     const rows = [headers, separator];
 
     apiMethodArray.forEach((item) => {
-      const values = headers.map((header) => item[header] || "");
+      const values = Object.values(item);
       rows.push(values);
     });
 
