@@ -21,5 +21,15 @@ export class ConvertorService {
     return rows.map((row) => `| ${row.join(" | ")} |`).join("\n");
   }
 
-  convertToSeeder() {}
+  convertToSeeder(apiMethodArray: ApiMethodRow[]) {
+    return apiMethodArray.map((item, index) => ({
+      idx: index + 1,
+      type: item.type,
+      coin: {
+        symbol: item.type,
+      },
+      method: item.method,
+      ac: item.ac,
+    }));
+  }
 }
