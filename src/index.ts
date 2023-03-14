@@ -9,6 +9,8 @@ async function main() {
 
   const markdownTable = convertorService.convertToMarkdown(apiMethodList);
   console.log(markdownTable);
+  const seederTable = convertorService.convertToSeeder(apiMethodList);
+  console.log(seederTable);
 }
 
 main()
