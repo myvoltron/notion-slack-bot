@@ -1,4 +1,4 @@
-import { ConvertorService } from "./convertor.service";
+import { ConvertorService } from "./convertor/convertor.service";
 import { NotionService } from "./notion/notion.service";
 
 async function main() {
