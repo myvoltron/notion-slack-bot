@@ -1,4 +1,4 @@
-import { ApiMethodRow } from "./notion/notion.interface";
+import { ApiMethodRow } from "../notion/notion.interface";
 
 export class ConvertorService {
   /** 배열을 markdown 테이블로 바꿉니다. **/
