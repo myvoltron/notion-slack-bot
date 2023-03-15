@@ -16,7 +16,8 @@
   "dependencies": {
     "@notionhq/client": "^2.2.2",
     "@slack/bolt": "^3.12.2",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "ts-jenum": "^2.2.2"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
