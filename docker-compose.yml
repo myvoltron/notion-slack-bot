@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  slack-bot:
+    build: .
+    ports:
+      - "80:80"
