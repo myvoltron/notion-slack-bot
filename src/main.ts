@@ -13,7 +13,7 @@ const app = new App({
 const notionService = new NotionService();
 const convertorService = new ConvertorService();
 
-app.command("/convert", async ({ command, ack, respond }) => {
+app.command("/convert", async ({ command, ack, say }) => {
   await ack();
 
   const requester = command.user_name;
@@ -29,10 +29,10 @@ app.command("/convert", async ({ command, ack, respond }) => {
   // 참고 - https://slack.dev/bolt-js/concepts#message-sending
   const message = `
   ${requester}님 요청 결과는 다음과 같습니다! 
-  ${converted}
+  ${JSON.stringify(converted)}
   `;
 
-  await respond(`${message}`);
+  await say(message);
 });
 
 (async () => {

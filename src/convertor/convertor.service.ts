@@ -23,17 +23,15 @@ export class ConvertorService {
   }
 
   convertToSeeder(apiMethodArray: ApiMethodRow[]) {
-    return apiMethodArray
-      .map((item, index) => ({
-        idx: index + 1,
-        type: item.type,
-        coin: {
-          symbol: item.type,
-        },
-        method: item.method,
-        ac: item.ac,
-      }))
-      .toString();
+    return apiMethodArray.map((item, index) => ({
+      idx: index + 1,
+      type: item.type,
+      coin: {
+        symbol: item.type,
+      },
+      method: item.method,
+      ac: item.ac,
+    }));
   }
 
   convertApiMethodArray(apiMethodArray: ApiMethodRow[], type: ConvertType) {
