@@ -1,12 +1,10 @@
+import { PlainTextElement } from "@slack/bolt";
 import { Enum, EnumType } from "ts-jenum";
 
 @Enum("code")
 export class ConvertType extends EnumType<ConvertType>() {
-  static readonly MARKDOWN = new ConvertType(
-    "MARKDOWN",
-    "마크다운으로 변환합니다."
-  );
-  static readonly SEEDER = new ConvertType("SEEDER", "시더파일로 변환합니다.");
+  static readonly MARKDOWN = new ConvertType("MARKDOWN", "markdown");
+  static readonly SEEDER = new ConvertType("SEEDER", "seeder");
 
   private constructor(readonly code: string, readonly description: string) {
     super();
@@ -20,5 +18,12 @@ export class ConvertType extends EnumType<ConvertType>() {
     } else {
       return this.MARKDOWN;
     }
+  }
+
+  makeContentsByType(contents: any): PlainTextElement {
+    return {
+      type: "plain_text",
+      text: this.code === "MARKDOWN" ? contents : JSON.stringify(contents),
+    };
   }
 }
