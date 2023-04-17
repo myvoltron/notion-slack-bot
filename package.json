@@ -15,7 +15,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "@notionhq/client": "^2.2.2",
+    "@notionhq/client": "^2.2.4",
     "@slack/bolt": "^3.12.2",
     "dotenv": "^16.0.1",
     "ts-jenum": "^2.2.2"
